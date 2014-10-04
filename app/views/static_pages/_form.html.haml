@@ -1,0 +1,6 @@
+=form_for :timelog, url: :timelog do |f|
+	=f.text_area :description
+	=f.text_field :time
+	=f.select :log_type, Timelog.log_types.keys.to_a
+	=f.submit "submit"
+

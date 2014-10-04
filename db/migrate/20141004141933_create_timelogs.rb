@@ -3,7 +3,7 @@ class CreateTimelogs < ActiveRecord::Migration
     create_table :timelogs do |t|
       t.datetime :time, default: Time.now
       t.text :description
-      t.integer :logType, null: false
+      t.integer :log_type, null: false
 			t.references :user
 
       t.timestamps

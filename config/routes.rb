@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 	get "/" => "static_pages#home"
+	get "log" => "static_pages#log"
+
+  resource :timelog
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
