@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004133537) do
+ActiveRecord::Schema.define(version: 20141004141933) do
+
+  create_table "timelogs", force: true do |t|
+    t.datetime "time",        default: '2014-10-04 14:41:27'
+    t.text     "description"
+    t.integer  "logType",                                     null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
