@@ -1,6 +1,13 @@
-=form_for :timelog, url: :timelog do |f|
-	=f.text_area :description
-	=f.text_field :time
-	=f.select :log_type, Timelog.log_types.keys.to_a
-	=f.submit "submit"
+=form_for(@newtimelog, url: :timelog) do |f|
+	%div
+		=f.label :description
+		=f.text_area :description
+	%div
+		=f.label :time
+		=f.time_field :time
+	%div
+		=f.label :timelog_type
+		=f.select :timelog_type, Timelog.timelog_types.keys.to_a
+	%div
+		=f.submit "submit"
 

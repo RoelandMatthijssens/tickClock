@@ -9,6 +9,31 @@
 <body>
 
 <%= yield %>
-
+<% if Rails.env.development? %>
+  <div id="debug">
+    DEBUG
+    <%= debug(params) %><br/>
+    <br/>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">SESSION</th>
+        </tr>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% session.keys.each do |key| %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= session[key] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
 </body>
 </html>
