@@ -6,8 +6,8 @@
 		=f.label :time
 		=f.time_field :time
 	%div
-		=f.label :timelog_type
-		=f.select :timelog_type, Timelog.timelog_types.keys.to_a
+		=f.label :kind
+		=f.select :kind, Timelog.kinds
 	%div
 		=f.submit "submit"
 
