@@ -4,11 +4,12 @@ class TimelogsController < ApplicationController
 		@timelog = Timelog.new(timelog_params)
 		@timelog.user = current_user;
 		@timelog.save!
+		flash[:notice] = [timelog_params.inspect]
 		redirect_to :timelogs
 	end
 
 	private
 	def timelog_params
-		params.require(:timelog).permit(:time, :description, :timelog_type)
+		params.require(:timelog).permit(:time, :description, :kind)
 	end
 end
