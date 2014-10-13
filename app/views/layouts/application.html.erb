@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TickClock</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>TickClock</title>
+	<%= stylesheet_link_tag		 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 <% if Rails.env.development? %>
-  <div id="debug">
-    DEBUG
-    <%= debug(params) %><br/>
-    <br/>
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2">SESSION</th>
-        </tr>
-        <tr>
-          <th>Key</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% session.keys.each do |key| %>
-          <tr>
-            <td><%= key %></td>
-            <td><%= session[key] %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+	<div id="debug">
+		DEBUG
+		<%= debug(params) %><br/>
+		<br/>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2">SESSION</th>
+				</tr>
+				<tr>
+					<th>Key</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% session.keys.each do |key| %>
+					<tr>
+						<td><%= key %></td>
+						<td><%= session[key] %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 <% end %>
 </body>
 </html>

@@ -1,25 +1,23 @@
-=user_signed_in?
-=@newtimelog.time
 =render partial: "form"
 
 .logs
-  %table
-    %tr
-      %th ID
-      %th time
-      %th timelog_type
-      %th description
-      %th user_id
-    -@timelogs.each do |timelog|
-      %tr
-        %td
-          =timelog.id
-        %td
-          =timelog.time
-        %td
-          =timelog.timelog_type
-        %td
-          =timelog.description
-        %td
-          =timelog.user_id
+	%table
+		%tr
+			%th ID
+			%th time
+			%th kind
+			%th description
+			%th user_id
+		-@timelogs.each do |timelog|
+			%tr
+				%td
+					=timelog.id
+				%td
+					=timelog.time
+				%td
+					=timelog.kind
+				%td
+					=timelog.description
+				%td
+					=timelog.user_id
 

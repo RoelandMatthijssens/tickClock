@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20141004141933) do
 
   create_table "timelogs", force: true do |t|
-    t.datetime "time",         default: '2014-10-07 20:52:47'
+    t.datetime "time",        default: '2014-10-13 17:26:38'
     t.text     "description"
-    t.integer  "timelog_type",                                 null: false
+    t.integer  "kind",                                        null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
