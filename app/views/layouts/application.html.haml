@@ -13,3 +13,19 @@
 		%main{:role => "main"}
 			= render 'layouts/messages'
 			= yield
+		- if Rails.env.development?
+			#debug
+				%h3 DEBUG
+				= debug(params)
+				%table.table.table-striped.table-hover
+					%thead
+						%tr
+							%th{colspan: "2"} SESSION
+						%tr
+							%th Key
+							%th Value
+					%tbody
+						- session.keys.each do |key|
+							%tr
+								%td= key
+								%td= session[key]
