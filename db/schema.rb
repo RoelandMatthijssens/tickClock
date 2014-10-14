@@ -11,29 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014200459) do
-
-  create_table "supervisions", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "subordinate_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "team_memberships", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "team_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "teams", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141004141933) do
 
   create_table "timelogs", force: true do |t|
-    t.datetime "time",        default: '2014-10-14 21:14:27'
+    t.datetime "time",        default: '2014-10-14 20:14:13'
     t.text     "description"
     t.integer  "kind",                                        null: false
     t.integer  "user_id"
