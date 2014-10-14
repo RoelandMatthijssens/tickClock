@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 	has_many :time_logs
 	has_many :team_memberships
 	has_many :teams, through: :team_memberships
+	has_many :supervises, class_name: :Supervision, foreign_key: :user_id
+	has_many :supervised_by, class_name: :Supervision, foreign_key: :subordinate_id
+	has_many :subordinates, through: :supervises, source: :user
+	has_many :supervisors, through: :supervised_by, source: :user
 end
