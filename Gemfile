@@ -21,6 +21,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 gem 'haml-rails'
+gem 'rspec-rails'
+gem 'factory_girl'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
