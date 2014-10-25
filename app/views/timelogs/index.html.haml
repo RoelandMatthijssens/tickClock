@@ -1,0 +1,23 @@
+=render partial: "form"
+
+.logs
+	%table.table.table-bordered
+		%tr
+			%th ID
+			%th time
+			%th kind
+			%th description
+			%th user_id
+		-@timelogs.each do |timelog|
+			%tr
+				%td
+					=timelog.id
+				%td
+					=timelog.time
+				%td
+					=timelog.kind
+				%td
+					=timelog.description
+				%td
+					=timelog.user_id
+
