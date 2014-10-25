@@ -1,5 +1,11 @@
 class TimelogsController < ApplicationController
 	before_action :authenticate_user!, :except => [:home]
+
+	def index
+		@timelogs = Timelog.all
+		@newtimelog = Timelog.new
+	end
+
 	def create
 		@timelog = Timelog.new(timelog_params)
 		@timelog.user = current_user;
