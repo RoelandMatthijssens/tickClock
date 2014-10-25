@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
 	has_many :supervises, class_name: :Supervision, foreign_key: :subordinate_id
 	has_many :supervisors, through: :supervised_by, source: :subordinate
 	has_many :subordinates, through: :supervises, source: :user
+
+	def last_timelog
+		Timelog.where(user: self).order(time: :desc).first
+	end
+
 end
