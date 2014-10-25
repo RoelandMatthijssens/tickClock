@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20141025123553) do
   end
 
   create_table "timelogs", force: true do |t|
-    t.datetime "time",        default: '2014-10-14 22:08:25'
+    t.datetime "time",        default: '2014-10-25 14:07:38'
     t.text     "description"
     t.integer  "kind",                                        null: false
     t.integer  "user_id"
